@@ -1,22 +1,24 @@
 import React from 'react';
-import './App.scss';
+import { connect } from 'react-redux';
+
+import Header from './Header/Header'
+import Content from './Content/Content';
+
+import { simpleAction } from '../actions/simpleAction'
+
+const mapDispatchToProps = dispatch => ({
+  simpleAction: () => dispatch(simpleAction())
+})
+
+const mapStateToProps = state => ({
+  ...state
+})
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+  <div className="PokedexHome">
+    <Header />
+    <Content />
   </div>
 );
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
