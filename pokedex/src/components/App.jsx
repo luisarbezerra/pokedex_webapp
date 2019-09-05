@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from './Header/Header'
 import Content from './Content/Content';
+import './App.scss';
 
 import { simpleAction } from '../actions/simpleAction'
 
@@ -15,7 +16,7 @@ const mapStateToProps = state => ({
 })
 
 const App = () => (
-  <div className="PokedexHome">
+  <div className="Home">
     <Header />
     <Content />
   </div>
