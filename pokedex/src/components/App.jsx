@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import Header from './Header/Header'
+import Header  from './Header/Header'
 import Content from './Content/Content';
+import Footer  from './Footer/Footer'
+
 import './App.scss';
 
 import { simpleAction } from '../actions/simpleAction'
@@ -16,10 +18,11 @@ const mapStateToProps = state => ({
 })
 
 const App = () => (
-  <div className="Home">
-    <Header />
-    <Content />
-  </div>
+    <Fragment>
+      <Header />
+      <Content />
+      <Footer />
+    </Fragment>
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

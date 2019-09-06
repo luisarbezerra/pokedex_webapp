@@ -1,26 +1,23 @@
 @import '../../assets/sass/globals.scss';
 
-.header {
-  background-color: $dark-gray;
-  color: white;
-  height: 4rem;
+.card {
   position: relative;
-  width: 100%;
+  background: $gray;
+  border-radius: 0.5rem;
+  width: 15rem;
+  height: 10rem;
+  margin: 1rem 2rem;
+  cursor: pointer;
+  transition: 0.3s;
   
-  .title{
-    font-size: 20px;
-    position: absolute;
-    margin-left: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
+  
+  .card-text {
+    font-size: 14px;
+    padding: 4rem 1rem;
+    color: $dark-gray;
   }
+}
 
-  .logo {
-    height: 2.5rem;
-    position: absolute;
-    margin-left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
+.card:hover{
+  background: $gray-hover;
 }

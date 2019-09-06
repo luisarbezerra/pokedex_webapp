@@ -5,31 +5,12 @@ $blue: #2d8abd;
 $yellow: #ffc000;
 
 .content {
-  &__body {
-    background-color: white;
-    width: 100%;
-  }
-
-  &__col {
-    border-right: 1px solid darken($gray, 10%);
-  }
-
-  &__header {
-    background-color: $gray;
-    color: white;
-    width: 100%;
-    font-weight: 700;
-    text-align: center;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+  position: relative;
+  padding: 2rem 5rem;;
+  max-width: 100%;
+  .cards-table {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    margin: 0 !important;
-  }
-
-  &__status {
-    padding: 60px;
-    background-color: white;
   }
 }

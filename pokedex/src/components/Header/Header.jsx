@@ -33,7 +33,7 @@ export default class Header extends React.Component {
                     <input 
                         type="text" 
                         className="search-filter" 
-                        placeholder="Pokémon" 
+                        placeholder="Pesquise por um Pokémon..." 
                         onChange={this.handleChange}
                     />
                     <i class="fa fa-search search-icon"></i>
