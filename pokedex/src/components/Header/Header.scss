@@ -1,67 +1,67 @@
 @import '../../assets/sass/globals.scss';
 
 .header {
-  background-color: $dark-gray;
-  font-family: 'Righteous', cursive;
-  color: white;
-  height: 4rem;
-  position: relative;
-  width: 100%;
+    background-color: $dark-gray;
+    font-family: 'Righteous', cursive;
+    color: white;
+    height: 4rem;
+    position: relative;
+    width: 100%;
   
-  .title{
-    font-size: 20px;
-    position: absolute;
-    margin-left: 5rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    .title{
+        font-size: 20px;
+        position: absolute;
+        margin-left: 5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-  .logo {
-    height: 2.5rem;
-    position: absolute;
-    margin-left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .search {
-    display: flex;
-    position: absolute;
-    margin-right: 2rem;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-  }
-
-  .search-filter {
-    width: 20rem;
-    border: 3px solid $red;
-    border-right: none;
-    padding: 5px;
-    height: 20px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: $dark-gray;
-  }
-  
-  .search-filter:focus{
-    color: $dark-gray;
-  }
-
-  .search-icon {
-    width: 40px;
-    height: 27.5px;
-    border: 1px solid $red;
-    background: $red;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    font-size: 20px;
-    vertical-align: middle;
-  }
-
-  .fa {
-    padding-top: 0.4rem;
-  }
-
+    .logo {
+        height: 2.5rem;
+        position: absolute;
+        margin-left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .search {
+        display: flex;
+        position: absolute;
+        margin-right: 2rem;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    
+    .search-filter {
+        width: 20rem;
+        border: 3px solid $red;
+        border-right: none;
+        padding: 5px;
+        height: 20px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: $dark-gray;
+    }
+      
+    .search-filter:focus{
+        color: $dark-gray;
+    }
+    
+    .search-icon {
+        width: 40px;
+        height: 27.5px;
+        border: 1px solid $red;
+        background: $red;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        font-size: 20px;
+        vertical-align: middle;
+    }
+    
+    .fa {
+        padding-top: 0.4rem;
+    }
+    
 }

@@ -6,16 +6,19 @@ import {
 } from '../actions/Pokemon';
 
 const initialState = {
-    isModalOpened: false,
-    all_pokemon:   {},
-    error:         null,
-    fetching:      false,
+    search:         "",
+    all_pokemon:    {},
+    search_pokemon: null,
+    error:          null,
+    fetching:       false,
 };
 
-export default function pokemon(state = initialState, action) {
+export const pokemon = (state = initialState, action) => {
     switch (action.type) {
         case 'HANDLE_SEARCH':
-            //TODO
+            return { ...state, search: action.payload, search_pokemon: ((state.search && state.all_pokemon) ? 
+                state.all_pokemon.filter(pokemon => pokemon.name.toLowerCase().indexOf(state.search.toLowerCase()) >-1,)
+                : state.search_pokemon) }
         case 'FETCHING_POKEMON':
             return { ...state, fetching: true }
         case 'FETCHED_POKEMON':
@@ -24,5 +27,5 @@ export default function pokemon(state = initialState, action) {
             return { ...state, error: action.payload, fetching: false }
         default:
             return state;
-      }
+    }
 }

@@ -36,7 +36,7 @@ export default class Header extends React.Component {
                         placeholder="Pesquise por um Pokémon..." 
                         onChange={this.handleChange}
                     />
-                    <i class="fa fa-search search-icon"></i>
+                    <i className="fa fa-search search-icon"></i>
                 </div>
 
             </div>

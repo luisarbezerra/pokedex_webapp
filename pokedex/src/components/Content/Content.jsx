@@ -2,23 +2,45 @@ import React from 'react';
 import './Content.scss';
 import Card from "../Card/Card"
 
-const Content = () => (
-    <div className="content">
-        <div className="cards-table"> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-            <Card/> 
-        </div>
-    </div>
-);
+export default class Content extends React.Component {
 
-export default Content;
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount () {
+        this.props.fetchPokemon();
+    }
+
+    render() {
+        return (
+            <div className="content">
+                <div className="cards-table"> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                    <Card/> 
+                </div>
+            </div>
+        );
+    }
+}   

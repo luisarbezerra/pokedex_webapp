@@ -2,26 +2,24 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import Header  from './Header/Header'
-import Content from './Content/Content';
+import Content from './Content';
 import Footer  from './Footer/Footer'
 
 import './App.scss';
 
-import { simpleAction } from '../actions/simpleAction'
-
 const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
+//TODO
 })
 
 const mapStateToProps = state => ({
-  ...state
+    ...state
 })
 
 const App = () => (
     <Fragment>
-      <Header />
-      <Content />
-      <Footer />
+        <Header />
+        <Content />
+        <Footer />
     </Fragment>
 );
 
