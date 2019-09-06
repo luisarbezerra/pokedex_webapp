@@ -5,7 +5,7 @@ export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            search: "",
+            searchPokemon: "",
         }
         this.handleChange = this.handleChange.bind(this);
         this.onSearch = this.onSearch.bind(this);
@@ -13,14 +13,11 @@ export default class Header extends React.Component {
 
     handleChange(e) {
         e.preventDefault();
-        this.setState({search: e.target.value});
+        this.setState({searchPokemon: e.target.value});
     }
 
     onSearch() {
-        let search = this.search;
-        if (search.trim()) {
-
-        }
+        this.props.onSearch(this.state.searchPokemon);
     }
 
     render () {
@@ -34,9 +31,12 @@ export default class Header extends React.Component {
                         type="text" 
                         className="search-filter" 
                         placeholder="Pesquise por um Pokémon..." 
-                        onChange={this.handleChange}
+                        onChange={this.handleChange.bind(this)}
                     />
-                    <i className="fa fa-search search-icon"></i>
+                    <button type="submit" class="searchButton" onClick={this.onSearch.bind(this)}>
+                        <i className="fa fa-search search-icon"></i>
+                    </button>
+
                 </div>
 
             </div>

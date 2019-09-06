@@ -1,19 +1,22 @@
 import Content          from './Content'
 import { connect }      from 'react-redux'
-import { fetchPokemon } from '../../actions/Pokemon'
+import { 
+  fetchPokemon, 
+} from '../../actions/Pokemon'
 
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    allPokemon: state.pokemon.all_pokemon,
+    allPokemon:     state.pokemon.all_pokemon,
+    loadingPokemon: state.pokemon.fetching,
   }
 }
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPokemon: () => {
-      dispatch(fetchPokemon());
+    fetchPokemon: (offset, limit) => {
+      dispatch(fetchPokemon(offset, limit));
     },
   }
 }

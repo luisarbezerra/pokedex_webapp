@@ -2,19 +2,18 @@
 
 .footer {
   background-color: $dark-gray;
+  position: relative;
   color: white;
   height: 2rem;
-  position: absolute;
   width: 100%;
   bottom: 0;
   
   .footer-text{
-    position: absolute;
     font-size: 0.8rem;
-    right: 0;
+    position: relative;
+    float: right;
     margin-right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
+    line-height: 2.3em;
     .heart {
       color: $red;
       font-size: 1rem;
