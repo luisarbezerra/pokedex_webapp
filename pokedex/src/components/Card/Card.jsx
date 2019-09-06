@@ -1,7 +1,7 @@
 import React from 'react';
-import './Header.scss';
+import './Card.scss';
 
-export default class Header extends React.Component {
+export default class Card extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,17 +28,6 @@ export default class Header extends React.Component {
             <div className="header"> 
                 <img className="logo" src={require("../../assets/images/logo.png")}/>
                 <span className="title">SmarttPokédex</span>
-                
-                <div className="search">
-                    <input 
-                        type="text" 
-                        className="search-filter" 
-                        placeholder="Pokémon" 
-                        onChange={this.handleChange}
-                    />
-                    <i class="fa fa-search search-icon"></i>
-                </div>
-
             </div>
         );
     }

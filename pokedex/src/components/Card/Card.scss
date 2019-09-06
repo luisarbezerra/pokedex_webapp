@@ -1,0 +1,26 @@
+@import '../../assets/sass/globals.scss';
+
+.header {
+  background-color: $dark-gray;
+  color: white;
+  height: 4rem;
+  position: relative;
+  width: 100%;
+  
+  .title{
+    font-size: 20px;
+    position: absolute;
+    margin-left: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .logo {
+    height: 2.5rem;
+    position: absolute;
+    margin-left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
