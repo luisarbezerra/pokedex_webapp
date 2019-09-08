@@ -1,5 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
+const baseUrl = 'https://pokeapi.co/api/v2/pokemon';
+
 export const FETCHING_POKEMON           = 'FETCHING_POKEMON'
 export const FETCHED_POKEMON            = 'FETCHED_POKEMON'
 export const FETCH_POKEMON_ERROR        = 'FETCH_POKEMON_ERROR'
@@ -13,10 +15,10 @@ export function fetchingPokemon() {
     }
 }
 
-export function fetchedPokemon(all_pokemon) {
+export function fetchedPokemon(allPokemon) {
     return {
         type:    'FETCHED_POKEMON',
-        payload: all_pokemon,
+        payload: allPokemon,
     }
 }
   
@@ -28,13 +30,15 @@ export function fetchPokemonError(error) {
 }
 
 export function fetchPokemon(offset, limit) {
-    return async function (dispatch, getState) {
+    return async function (dispatch) {
         try {
             dispatch(fetchingPokemon())
-            let response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset' + offset + '&limit=' + limit)
-            let json = await response.json();
+            const url = `${baseUrl}/?offset=${offset}&limit=${limit}`;
+
+            let response = await fetch(url)
+            const json = await response.json();
             if (response.ok) {
-                return dispatch(fetchedPokemon(json));
+                return dispatch(fetchedPokemon(json.results));
             } else {
                 throw new Error(json.message);
             }
@@ -64,13 +68,14 @@ export function fetchSinglePokemonError(error) {
     }
 }
 
-export function fetchSinglePokemon(offset, limit) {
-    return async function (dispatch, getState) {
-        //TODO
+export function fetchSinglePokemon(pokemonName) {
+    return async function (dispatch) {
         try {
             dispatch(fetchingSinglePokemon())
-            let response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset' + offset + '&limit=' + limit)
-            let json = await response.json();
+            const url = `${baseUrl}/${pokemonName}`;
+
+            let response = await fetch(url)
+            const json = await response.json();
             if (response.ok) {
                 return dispatch(fetchedSinglePokemon(json));
             } else {
