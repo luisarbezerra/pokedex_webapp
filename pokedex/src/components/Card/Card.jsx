@@ -27,9 +27,14 @@ export default class Card extends React.Component {
         }
     }
     render () {
-        debugger
         return (
             <div className="card" key={this.props.id} onClick={this.onClick.bind(this)}> 
+                <div className=" card-text"><span>Nome: {this.parseName(this.props.pokemon['name'])}</span></div>
+                <div className=" card-text"><span>Número: {this.parseNumberID(this.props.id)}</span></div>
+                <div className=" card-text"><span>Nome: {this.parseName(this.props.pokemon['name'])}</span></div>
+                <div className=" card-text"><span>Número: {this.parseNumberID(this.props.id)}</span></div>
+                <div className=" card-text"><span>Nome: {this.parseName(this.props.pokemon['name'])}</span></div>
+                <div className=" card-text"><span>Número: {this.parseNumberID(this.props.id)}</span></div>
                 <div className=" card-text"><span>Nome: {this.parseName(this.props.pokemon['name'])}</span></div>
                 <div className=" card-text"><span>Número: {this.parseNumberID(this.props.id)}</span></div>
             </div>

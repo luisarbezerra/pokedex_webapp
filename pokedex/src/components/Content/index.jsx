@@ -6,9 +6,11 @@ import {
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     allPokemon:     state.pokemon.all_pokemon,
     loadingPokemon: state.pokemon.fetching,
+    maxPokemon:     state.pokemon.max_pokemon,
   }
 }
 

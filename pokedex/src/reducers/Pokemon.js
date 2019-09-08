@@ -13,6 +13,7 @@ const initialState = {
     search_pokemon: null,
     error:          null,
     fetching:       false,
+    max_pokemon:    null,
 };
 
 export const pokemon = (state = initialState, action) => {
@@ -20,7 +21,7 @@ export const pokemon = (state = initialState, action) => {
         case 'FETCHING_POKEMON':
             return { ...state, fetching: true }
         case 'FETCHED_POKEMON':
-            return { ...state, all_pokemon: action.payload, error: null, fetching: false }
+            return { ...state, all_pokemon: action.payload, error: null, fetching: false, max_pokemon: action.payload.count }
         case 'FETCH_POKEMON_ERROR':
             return { ...state, error: action.payload, fetching: false }
         case 'FETCHING_SINGLE_POKEMON':

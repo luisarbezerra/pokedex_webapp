@@ -11,13 +11,17 @@ export default class Content extends React.Component {
     componentWillMount() {
         this.props.fetchPokemon( Object.keys(this.props.allPokemon).length !== 0 ? 
         Object.keys(this.props.allPokemon).length 
-            : 0, 20 );
+            : 0, 30 );
     }
 
     componentDidMount() {
+        debugger
         return (window.onscroll = function (ev) {
-            if (!this.props.loadingPokemon && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                this.props.fetchPokemon(Object.keys(this.props.allPokemon).length, 20);
+            debugger
+            if (!this.props.loadingPokemon && 
+            Object.keys(this.props.allPokemon).length < this.props.maxPokemon && 
+            (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                this.props.fetchPokemon(Object.keys(this.props.allPokemon).length, 30);
             }
         }.bind(this));
     }
