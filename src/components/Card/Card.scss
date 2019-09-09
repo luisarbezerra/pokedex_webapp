@@ -12,9 +12,41 @@
   
   
   .card-text {
-    font-size: 14px;
+    font-size: 22px;
+    color: $dark-gray;
+    font-weight: bold;
+  }
+
+  .number-text {
+    color: #f3f3f3;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 95px;
+    font-family: 'Righteous', cursive;
+    font-weight: 200;
+  }
+
+  .pkmn-image {
+    position: relative;
+    z-index: 200;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  .footer-text{
+    position: absolute;
+    bottom: 0;
+    margin: 10px 10px;
+  }
+
+  .card-type {
+    font-size: 12px;
     color: $dark-gray;
   }
+
 }
 
 .card:hover{

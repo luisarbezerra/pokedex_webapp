@@ -10,7 +10,6 @@ import {
 const initialState = {
     search:         '',
     all_pokemon:    [],
-    search_pokemon: null,
     error:          null,
     fetching:       false,
     max_pokemon:    null,
@@ -20,6 +19,16 @@ const handleFetchNewPokemon = (state, new_pokemon) => {
     const all_pokemon = [ ...state.all_pokemon, ...new_pokemon];
     return {
       ...state, all_pokemon, error: null, fetching: false
+    };
+}
+
+const handleFetchSinglePokemon = (state, new_pokemon) => {
+    const position = new_pokemon.id - 1;
+    const all_pokemon =  state.all_pokemon;
+    all_pokemon.splice(position, 1, new_pokemon);
+
+    return {
+      ...state, all_pokemon: [...all_pokemon], error: null, fetching: false
     };
 }
 
@@ -33,8 +42,8 @@ export const pokemon = (state = initialState, { type, payload }) => {
             return { ...state, error: payload, fetching: false }
         case 'FETCHING_SINGLE_POKEMON':
             return { ...state, fetching: true }
-        case 'FETCHED_SINGLE_POKEMON':
-            return { ...state, search_pokemon: payload, error: null, fetching: false }
+        case FETCHED_SINGLE_POKEMON:
+            return handleFetchSinglePokemon(state, payload);
         case 'FETCH_SINGLE_POKEMON_ERROR':
             return { ...state, error: payload, fetching: false }
             

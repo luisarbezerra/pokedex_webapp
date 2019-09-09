@@ -1,11 +1,11 @@
 import React from 'react';
 import './Content.scss';
-import Card from '../Card/Card'
+import Card from '../Card'
 
 export default class Content extends React.Component {
     componentDidMount() {
         const pokemonLength = this.props.all_pokemon.length;
-        this.props.fetchPokemon(pokemonLength, 20);
+        this.props.fetchPokemon(pokemonLength, 30);
 
         window.addEventListener("scroll", function(){
             var wrap = document.getElementById('content');
@@ -14,14 +14,17 @@ export default class Content extends React.Component {
             var y = yOffset + window.innerHeight;
             if(!this.props.loading_pokemon && (y >= contentHeight))
             {
-                this.props.fetchPokemon(this.props.all_pokemon.length, 20);
+                this.props.fetchPokemon(this.props.all_pokemon.length, 30);
             }
         }.bind(this))
     }
 
-    renderCard = (pokemon, key) => (
-        <Card {...pokemon} id={key+1} show_modal={this.props.show_modal} showModal={this.props.showModal}/>
-    );
+    renderCard = (pokemon, key) => {
+        return <Card {...pokemon} id={key+1} 
+            show_modal={this.props.show_modal} 
+            showModal={this.props.showModal}
+        />
+    };
 
     renderCards = () => {
         const { all_pokemon } = this.props;
@@ -34,7 +37,7 @@ export default class Content extends React.Component {
                 <div className="cards-table"> 
                     {this.renderCards()}
                 </div>
-                { this.props.loadingPokemon? 
+                { this.props.loading_pokemon? 
                     <p className="App-intro"> loading ...</p>
                     : ""
                 }

@@ -38,12 +38,15 @@ export function fetchPokemon(offset, limit) {
             let response = await fetch(url)
             const json = await response.json();
             if (response.ok) {
-                return dispatch(fetchedPokemon(json.results));
+                dispatch(fetchedPokemon(json.results));
+                json.results.forEach((pokemon) => {
+                    dispatch(fetchSinglePokemon(pokemon.name));
+                })
             } else {
                 throw new Error(json.message);
             }
         } catch (error) {
-            return dispatch(fetchPokemonError(error));
+            dispatch(fetchPokemonError(error));
         }
     }
 }
@@ -56,7 +59,7 @@ export function fetchingSinglePokemon() {
 
 export function fetchedSinglePokemon(single_pokemon) {
     return {
-        type:    'FETCHED_SINGLE_POKEMON',
+        type: FETCHED_SINGLE_POKEMON,
         payload: single_pokemon,
     }
 }
@@ -68,12 +71,11 @@ export function fetchSinglePokemonError(error) {
     }
 }
 
-export function fetchSinglePokemon(pokemonName) {
+export function fetchSinglePokemon(pokemon_name) {
     return async function (dispatch) {
         try {
-            dispatch(fetchingSinglePokemon())
-            const url = `${baseUrl}/${pokemonName}`;
-
+            dispatch(fetchingSinglePokemon());
+            const url = `${baseUrl}/${pokemon_name}`;
             let response = await fetch(url)
             const json = await response.json();
             if (response.ok) {
@@ -86,4 +88,3 @@ export function fetchSinglePokemon(pokemonName) {
         }
     }
 }
-

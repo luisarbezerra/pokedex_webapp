@@ -1,4 +1,3 @@
-
 import { connect } from 'react-redux'
 import { 
     fetchPokemon, 
@@ -14,7 +13,7 @@ const mapStateToProps = (state) => {
         all_pokemon:     state.pokemon.all_pokemon,
         loading_pokemon: state.pokemon.fetching,
         max_pokemon:     state.pokemon.max_pokemon,
-        show_modal:      state.modal.show_modal
+        show_modal:      state.modal.show_modal,
     }
 }
 
