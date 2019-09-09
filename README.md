@@ -6,7 +6,7 @@ Pokédex criada com React e Redux, consumindo dados da RESTful API https://pokea
 * Redux
 
 ## Scripts
-Scripts disponíveis para execução:
+Scripts básicos para a execução:
 
 ### `npm install`
 Para instalar todos os plugins, basta entrar no diretório do projeto e executar o comando acima.
