@@ -29,8 +29,10 @@ export default class Header extends React.Component {
     render () {
         return (
             <div className="header"> 
-                <img className="logo" alt="logo-img" src={require("../../assets/images/logo.png")}/>
-                <span className="title">SmarttPokédex</span>
+                <div className="logo-content">
+                    <img className="logo" alt="logo-img" src={require("../../assets/images/logo.png")}/>
+                    <span className="title">SmarttPokédex</span>
+                </div>
                 
                 <div className="search">
                     <input 
@@ -40,10 +42,9 @@ export default class Header extends React.Component {
                         onChange={this.handleChange.bind(this)}
                         onKeyDown={this.keyPress.bind(this)}
                     />
-                    <button type="submit" className="searchButton" onClick={() => this.onSearch()}>
+                    <button type="submit" className="search-button" onClick={() => this.onSearch()}>
                         <i className="fa fa-search search-icon"></i>
                     </button>
-
                 </div>
 
             </div>
