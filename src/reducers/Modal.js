@@ -4,15 +4,15 @@ import {
   } from '../actions/Modal';
   
 const initialState = {
-    showModal: false,
+    show_modal: false,
 };
   
 export const modal = (state = initialState, action) => {
     switch (action.type) {
       case 'OPEN_MODAL':
-          return { ...state, showModal: true }
+          return { ...state, show_modal: true }
       case 'CLOSE_MODAL':
-          return { ...state, showModal: false }
+          return { ...state, show_modal: false }
       default:
           return state;
     }

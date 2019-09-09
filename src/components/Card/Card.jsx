@@ -17,7 +17,7 @@ const parseNumberID = (n) => {
 
 const Card = ({ id, showModal, name }) => {
     return (
-        <div className="card" key={id} onClick={() => showModal(true)}> 
+        <div className="card" key={id} onClick={() => showModal()}> 
             <div className=" card-text"><span>Nome: {parseName(name)}</span></div>
             <div className=" card-text"><span>Número: {parseNumberID(id)}</span></div>
         </div>

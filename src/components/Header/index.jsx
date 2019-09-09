@@ -1,25 +1,19 @@
 import { connect } from 'react-redux'
 import { 
-    showModal,
-    hideModal, 
+    showModal, 
 } from '../../actions/Modal'
 import Header from './Header'
 
-
 const mapStateToProps = (state) => {
     return {
-        showModal: state.modal.showModal,
+        show_modal: state.modal.show_modal,
     }
 }
 
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    openModal: () => {
+    showModal: () => {
         dispatch(showModal());
-    },
-    hideModal: () => {
-        dispatch(hideModal());
     },
   }
 }

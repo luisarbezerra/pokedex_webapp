@@ -33,7 +33,7 @@ export default class Header extends React.Component {
                         placeholder="Pesquise por um Pokémon..." 
                         onChange={this.handleChange.bind(this)}
                     />
-                    <button type="submit" className="searchButton" onClick={this.onSearch.bind(this)}>
+                    <button type="submit" className="searchButton" onClick={() => this.props.showModal()}>
                         <i className="fa fa-search search-icon"></i>
                     </button>
 

@@ -20,7 +20,7 @@ export default class Content extends React.Component {
     }
 
     renderCard = (pokemon, key) => (
-        <Card {...pokemon} id={key+1}/>
+        <Card {...pokemon} id={key+1} show_modal={this.props.show_modal} showModal={this.props.showModal}/>
     );
 
     renderCards = () => {
