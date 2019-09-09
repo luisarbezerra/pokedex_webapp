@@ -13,3 +13,5 @@ export const modal = (state = initialState, { type, payload }) => {
           return state;
     }
 }
+
+export default modal;
