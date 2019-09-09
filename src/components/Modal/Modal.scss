@@ -31,7 +31,6 @@
             width: 80%;
         }
 
-
         .button {
             display: inline-block;
             border-radius: 5px;
@@ -65,8 +64,11 @@
         }
 
         .card-type{
-            padding: 2px 4px;
             font-size: 12px;
+            color: $dark-gray;
+            padding: 2px 4px;
+            margin: 0 4px 0 0;
+            border-radius: 5px;
         }
 
         .pkmn-header{
@@ -85,6 +87,10 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 250px;
+        }
+
+        .pkmn-types {
+            margin-top: 2px;
         }
     }
 }
