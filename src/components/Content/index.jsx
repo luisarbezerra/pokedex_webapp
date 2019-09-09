@@ -23,8 +23,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchPokemon: (offset, limit) => {
             dispatch(fetchPokemon(offset, limit));
         },
-        showModal: () => {
-            dispatch(showModal());
+        showModal: (pokemon_name) => {
+            dispatch(showModal(pokemon_name));
         }
     }
 }

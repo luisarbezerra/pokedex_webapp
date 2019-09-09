@@ -1,23 +1,27 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import Header  from './Header'
+import Header  from './Header';
 import Content from './Content';
 import Footer  from './Footer/Footer'
+import Modal   from './Modal/';
 
 import './App.scss';
 
 const mapDispatchToProps = dispatch => ({
-//TODO
+
 })
 
-const mapStateToProps = state => ({
-    ...state
-})
+const mapStateToProps = state => {
+    return {
+        show_modal: state.modal.show_modal,
+    }
+}
 
-const App = () => (
+const App = ( props ) => (
     <Fragment>
         <Header />
+        { props.show_modal && <Modal /> }
         <Content />
         <Footer />
     </Fragment>

@@ -7,7 +7,7 @@ export default class Card extends React.Component {
     );
         
     parseNumberID = (n) => {
-        if (n < 1000 && n > 100) {
+        if (n < 1000 && n >= 100) {
             return n
         } else if (n <= 99 && n > 9) {
             return "0" + n; 
@@ -33,7 +33,7 @@ export default class Card extends React.Component {
 
     render () {
         return (
-            <div className="card" key={this.props.name} onClick={() => this.props.showModal()}> 
+            <div className="card" key={this.props.name} onClick={() => this.props.showModal(this.props.name)}> 
                 {this.props.sprites && this.props.types && 
                 <div>
                     <img className="pkmn-image" src={this.props.sprites.front_default}/>

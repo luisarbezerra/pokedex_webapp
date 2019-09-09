@@ -8,6 +8,9 @@ export const FETCH_POKEMON_ERROR        = 'FETCH_POKEMON_ERROR'
 export const FETCHING_SINGLE_POKEMON    = 'FETCHING_SINGLE_POKEMON'
 export const FETCHED_SINGLE_POKEMON     = 'FETCHED_SINGLE_POKEMON'
 export const FETCH_SINGLE_POKEMON_ERROR = 'FETCH_SINGLE_POKEMON_ERROR'
+export const FETCHING_MODAL_POKEMON     = 'FETCHING_MODAL_POKEMON'
+export const FETCHED_MODAL_POKEMON      = 'FETCHED_MODAL_POKEMON'
+export const FETCH_MODAL_POKEMON_ERROR  = 'FETCH_MODAL_POKEMON_ERROR'
 
 export function fetchingPokemon() {
     return {
@@ -59,7 +62,7 @@ export function fetchingSinglePokemon() {
 
 export function fetchedSinglePokemon(single_pokemon) {
     return {
-        type: FETCHED_SINGLE_POKEMON,
+        type:    FETCHED_SINGLE_POKEMON,
         payload: single_pokemon,
     }
 }
@@ -85,6 +88,44 @@ export function fetchSinglePokemon(pokemon_name) {
             }
         } catch (error) {
             return dispatch(fetchSinglePokemonError(error));
+        }
+    }
+}
+
+export function fetchingModalPokemon() {
+    return {
+        type: 'FETCHING_MODAL_POKEMON'
+    }
+}
+
+export function fetchedModalPokemon(modal_pokemon) {
+    return {
+        type:    'FETCHED_MODAL_POKEMON',
+        payload: modal_pokemon,
+    }
+}
+  
+export function fetchModalPokemonError(error) {
+    return {
+        type:   'FETCH_MODAL_POKEMON_ERROR',
+        payload: error
+    }
+}
+
+export function fetchModalPokemon(pokemon_name) {
+    return async function (dispatch) {
+        try {
+            dispatch(fetchingModalPokemon());
+            const url = `${baseUrl}/${pokemon_name}`;
+            let response = await fetch(url)
+            const json = await response.json();
+            if (response.ok) {
+                return dispatch(fetchedModalPokemon(json));
+            } else {
+                throw new Error(json.message);
+            }
+        } catch (error) {
+            return dispatch(fetchModalPokemonError(error));
         }
     }
 }

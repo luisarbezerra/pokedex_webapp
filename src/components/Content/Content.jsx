@@ -14,7 +14,7 @@ export default class Content extends React.Component {
             var y = yOffset + window.innerHeight;
             if(!this.props.loading_pokemon && (y >= contentHeight))
             {
-                this.props.fetchPokemon(this.props.all_pokemon.length, 30);
+                this.props.fetchPokemon(this.props.all_pokemon.length, 10);
             }
         }.bind(this))
     }

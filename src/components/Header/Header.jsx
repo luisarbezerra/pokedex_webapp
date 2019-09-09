@@ -16,8 +16,14 @@ export default class Header extends React.Component {
         this.setState({searchPokemon: e.target.value});
     }
 
+    keyPress(e){
+        if(e.keyCode == 13){
+            this.onSearch()
+        }
+    }
+
     onSearch() {
-        this.props.onSearch(this.state.searchPokemon);
+        this.props.showModal(this.state.searchPokemon.toLowerCase())
     }
 
     render () {
@@ -32,8 +38,9 @@ export default class Header extends React.Component {
                         className="search-filter" 
                         placeholder="Pesquise por um Pokémon..." 
                         onChange={this.handleChange.bind(this)}
+                        onKeyDown={this.keyPress.bind(this)}
                     />
-                    <button type="submit" className="searchButton" onClick={() => this.props.showModal()}>
+                    <button type="submit" className="searchButton" onClick={() => this.onSearch()}>
                         <i className="fa fa-search search-icon"></i>
                     </button>
 
