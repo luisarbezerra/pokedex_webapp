@@ -14,7 +14,3 @@ Para instalar todos os plugins, basta entrar no diretório do projeto e executar
 ### `npm start`
 Roda a webapp em modo development.<br>
 Abra [http://localhost:3000](http://localhost:3000) para visualização em seu browser.
-
-### `npm test`
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
