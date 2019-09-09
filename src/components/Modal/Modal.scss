@@ -13,8 +13,8 @@
     .modal-main {
         position: relative;
         background: white;
-        width: 30%;
-        height: 30%;
+        width: 250px;
+        height: 150px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -39,8 +39,7 @@
             border: none;
             color: #FFFFFF;
             text-align: center;
-            font-size: 18px;
-            padding: 10px 15px;
+            padding: 5px 10px;
             transition: all 0.5s;
             cursor: pointer;
             margin: 5px;
@@ -51,7 +50,7 @@
 
         .pkmn-image {
             position: absolute;
-            height: 100%;
+            height: 125px;
             width: auto;
             left: 0;
         }
@@ -60,8 +59,31 @@
             display: grid;
             position: relative;
             float: right;
-            text-align: right;
+            text-align: left;
             margin: 20px;
+            font-size: 14px;
+        }
+
+        .pkmn-types{
+            //position: fixed;
+        }
+
+        .pkmn-header{
+            background-color: $red;
+            height: 25px;
+            position: relative;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .pkmn-title {
+            position: fixed;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            top: 13px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
         }
     }
 }

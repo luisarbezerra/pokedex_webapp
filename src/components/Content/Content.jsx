@@ -5,7 +5,7 @@ import Card from '../Card'
 export default class Content extends React.Component {
     componentDidMount() {
         const pokemonLength = this.props.all_pokemon.length;
-        this.props.fetchPokemon(pokemonLength, 30);
+        this.props.fetchPokemon(pokemonLength, 40);
 
         window.addEventListener("scroll", function(){
             var wrap = document.getElementById('content');
