@@ -18,7 +18,7 @@ export default class Modal extends React.Component  {
                     <section className="modal-main">
                     {(!this.props.error && !this.props.loading_pokemon && this.props.pokemon_info && this.props.pokemon_info.sprites) ?
                         <div>
-                            <img className="pkmn-image" src={this.props.pokemon_info.sprites.front_default}/>
+                            <img className="pkmn-image" alt="pkmn-modal" src={this.props.pokemon_info.sprites.front_default}/>
                             <div className="pkmn-info">
                                 <span>{this.props.pokemon_info.name}</span>
                                 <span>{this.props.pokemon_info.height} -</span>

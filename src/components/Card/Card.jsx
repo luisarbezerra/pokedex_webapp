@@ -17,7 +17,7 @@ export default class Card extends React.Component {
     }
 
     parseTypes = (types) => {
-        if (types.length == 1) {
+        if (types.length === 1) {
             return <span className={"card-type "+ types[0].type.name.toLowerCase() }>{types[0].type.name.toUpperCase()} </span>
         } else {
             return (types.map((poketype, index) => {
@@ -32,7 +32,7 @@ export default class Card extends React.Component {
             <div className="card" key={this.props.name} onClick={() => this.props.showModal(this.props.name)}> 
                 {this.props.sprites && this.props.types && 
                 <div>
-                    <img className="pkmn-image" src={this.props.sprites.front_default}/>
+                    <img className="pkmn-image" alt="pkmn-sprite" src={this.props.sprites.front_default}/>
                     <div className=" number-text"><span>#{this.parseNumberID(parseInt(this.props.id, 10))}</span></div>
                     <div className="footer-text">
                         <div className="card-text"><span>{this.parseName(this.props.name)}</span></div>

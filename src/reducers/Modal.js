@@ -1,8 +1,3 @@
-import { 
-    OPEN_MODAL,
-    CLOSE_MODAL
-  } from '../actions/Modal';
-  
 const initialState = {
     show_modal:    false,
     modal_pokemon: null,

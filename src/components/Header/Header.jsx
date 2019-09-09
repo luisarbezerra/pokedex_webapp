@@ -17,7 +17,7 @@ export default class Header extends React.Component {
     }
 
     keyPress(e){
-        if(e.keyCode == 13){
+        if(e.keyCode === 13){
             this.onSearch()
         }
     }
@@ -29,7 +29,7 @@ export default class Header extends React.Component {
     render () {
         return (
             <div className="header"> 
-                <img className="logo" src={require("../../assets/images/logo.png")}/>
+                <img className="logo" alt="logo-img" src={require("../../assets/images/logo.png")}/>
                 <span className="title">SmarttPokédex</span>
                 
                 <div className="search">

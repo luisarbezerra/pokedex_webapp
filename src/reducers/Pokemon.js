@@ -1,15 +1,3 @@
-import { 
-    FETCHING_POKEMON,
-    FETCHED_POKEMON,
-    FETCH_POKEMON_ERROR,
-    FETCHING_SINGLE_POKEMON,
-    FETCHED_SINGLE_POKEMON,
-    FETCH_SINGLE_POKEMON_ERROR,
-    FETCHING_MODAL_POKEMON,
-    FETCHED_MODAL_POKEMON,
-    FETCH_MODAL_POKEMON_ERROR,
-} from '../actions/Pokemon';
-
 const initialState = {
     modal_pokemon:  null,
     all_pokemon:    [],
