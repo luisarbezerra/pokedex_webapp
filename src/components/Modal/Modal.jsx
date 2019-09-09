@@ -8,7 +8,9 @@ export default class Modal extends React.Component  {
 
     parseTypes = (types) => {
         return (types.map((poketype, index) => {
-            return <span className={"card-type "+ poketype.type.name.toLowerCase()}>{poketype.type.name.toUpperCase()} </span>
+            return <span key={"card-type "+ poketype.type.name.toLowerCase()} className={"card-type "+ poketype.type.name.toLowerCase()}>
+                {poketype.type.name.toUpperCase()} 
+            </span>
         }))
     }
 
