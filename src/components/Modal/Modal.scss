@@ -1,4 +1,5 @@
 @import '../../assets/sass/globals.scss';
+@import '../../assets/sass/pokemon_types.scss';
 
 .modal {
     position: fixed;
@@ -10,40 +11,56 @@
     z-index: 1000;
 
     .modal-main {
-      position: fixed;
-      background: white;
-      width: 40%;
-      height: 40%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: $dark-gray;
+        position: relative;
+        background: white;
+        width: 30%;
+        height: 30%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $dark-gray;
+        border-radius: 5px;
       
-      .erro {
-          padding: 0 40px;
-          position: absolute;
-          text-align: center;
-          top: 50%;
-      }
-  
-  
-      .button {
-          display: inline-block;
-          border-radius: 4px;
-          background-color: $red;
-          border: none;
-          color: #FFFFFF;
-          text-align: center;
-          font-size: 18px;
-          padding: 10px 15px;
-          transition: all 0.5s;
-          cursor: pointer;
-          margin: 5px;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-      }
-  }
+        .erro {
+            padding: 0 40px;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+        }
+
+
+        .button {
+            display: inline-block;
+            border-radius: 5px;
+            background-color: $red;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .pkmn-image {
+            position: absolute;
+            height: 100%;
+            width: auto;
+            left: 0;
+        }
+
+        .pkmn-info {
+            display: grid;
+            position: relative;
+            float: right;
+            text-align: right;
+            margin: 20px;
+        }
+    }
 }
 
 .display-block {

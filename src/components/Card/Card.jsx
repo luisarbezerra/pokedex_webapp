@@ -18,14 +18,10 @@ export default class Card extends React.Component {
 
     parseTypes = (types) => {
         if (types.length == 1) {
-            return <span className="card-type">{types[0].type.name.toUpperCase()} </span>
+            return <span className={"card-type "+ types[0].type.name.toLowerCase() }>{types[0].type.name.toUpperCase()} </span>
         } else {
             return (types.map((poketype, index) => {
-                if (index === types.length-1) {
-                    return <span>{poketype.type.name.toUpperCase()} </span>
-                } else {
-                    return <span>{poketype.type.name.toUpperCase()} • </span>
-                }
+                return <span className={"card-type "+ poketype.type.name.toLowerCase()}>{poketype.type.name.toUpperCase()} </span>
             }
         ))
         }
@@ -40,8 +36,7 @@ export default class Card extends React.Component {
                     <div className=" number-text"><span>#{this.parseNumberID(parseInt(this.props.id, 10))}</span></div>
                     <div className="footer-text">
                         <div className="card-text"><span>{this.parseName(this.props.name)}</span></div>
-                        <div className="card-type">{this.parseTypes(this.props.types)}
-                    </div>
+                        <div className="card-type">{this.parseTypes(this.props.types)}</div>
                     </div>
                 </div>}
             </div>
