@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Should render correctly 1`] = `
+<div
+  className="modal display-none"
+>
+  <section
+    className="modal-main"
+  >
+    <span
+      className="erro"
+    >
+      "Erro! Não encontramos o seu Pokémon :( Faça uma nova busca."
+    </span>
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      Fechar
+    </button>
+  </section>
+</div>
+`;

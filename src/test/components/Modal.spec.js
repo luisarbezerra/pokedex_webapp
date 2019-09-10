@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Card from '../../components/Card/Card';
+import Modal from '../../components/Modal/Modal';
 
-describe('Card', () => {
+describe('Modal', () => {
   it('Should render correctly', () => {
-    const tree = shallow(<Card fetchModalPokemon={jest.fn()}/>);
+    const tree = shallow(<Modal fetchModalPokemon={jest.fn()}/>);
     expect(tree).toMatchSnapshot();
   });
 });

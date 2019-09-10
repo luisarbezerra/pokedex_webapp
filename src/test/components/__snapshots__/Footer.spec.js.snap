@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Should render correctly 1`] = `
+<div
+  className="footer"
+>
+  <span
+    className="footer-text"
+  >
+    SmarttPokédex made with 
+    <span
+      className="heart"
+    >
+      ♥
+    </span>
+     by Luísa Ribeiro 
+  </span>
+</div>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content Should render correctly 1`] = `
+<div
+  className="content"
+  id="content"
+>
+  <div
+    className="cards-table"
+  />
+</div>
+`;
