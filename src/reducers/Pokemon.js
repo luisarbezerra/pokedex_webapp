@@ -42,7 +42,7 @@ export const pokemon = (state = initialState, { type, payload }) => {
         case 'FETCHED_MODAL_POKEMON':
             return { ...state, modal_pokemon: payload, fetching: false, error: null }
         case 'FETCH_MODAL_POKEMON_ERROR':
-                return { ...state, error: payload, modal_pokemon: payload, fetching: false }
+                return { ...state, error: payload, modal_pokemon: null, fetching: false }
             
         default:
             return state;
