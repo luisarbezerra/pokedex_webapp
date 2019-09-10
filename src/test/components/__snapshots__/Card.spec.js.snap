@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Should render correctly 1`] = `
+<div
+  className="card"
+  onClick={[Function]}
+/>
+`;

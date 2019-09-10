@@ -11,13 +11,18 @@
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
     "react-scripts": "3.1.1",
+    "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.2",
@@ -51,6 +56,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   }
 }
